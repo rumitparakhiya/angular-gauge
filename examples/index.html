@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-aria.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-messages.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-    <script src="angularjs-gauge.min.js"></script>
+    <script src="angularjs-gauge.js"></script>
     <script src="app.js"></script>
 </head>
 
@@ -126,6 +126,18 @@
                     <input ng-model="m.options.backgroundColor">
                 </md-input-container>
             </div>
+            <md-slider-container class="md-block">
+                <div>Boder Width</div>
+                <md-slider min="0" max="10" class="md-primary" ng-model="m.options.borderWidth">
+                </md-slider>
+                <md-input-container>
+                    <input type="number" ng-model="m.options.borderWidth">
+                </md-input-container>
+            </md-slider-container>
+            <md-input-container class="md-block">
+                <label>Border Color</label>
+                <input type="text" ng-model="m.options.borderColor">
+            </md-input-container>
             <div layout-gt-sm="row" class="md-block" layout-align="space-between center">
                 
                     <div flex style="max-width:200px;">Thresholds</div>
@@ -143,7 +155,9 @@
                 <ng-gauge type="{{m.options.type}}" size="{{m.options.size}}" thick="{{m.options.thick}}" label="{{m.options.label}}" append="{{m.options.append}}"
                     prepend="{{m.options.prepend}}" cap="{{m.options.cap}}" foreground-color="{{m.options.foregroundColor}}"
                     background-color="{{m.options.backgroundColor}}" value="m.options.value" min="m.options.min" max="m.options.max"
-                    thresholds="m.enableThresholds ? m.thresholds : m.empty"></ng-gauge>
+                    border-width="{{m.options.borderWidth}}" border-color="{{m.options.borderColor}}"
+                    thresholds="m.enableThresholds ? m.thresholds : m.empty"
+                    click="m.gaugeClicked()"></ng-gauge>
             </div>
         </section>
     </div>

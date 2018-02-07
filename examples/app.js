@@ -47,5 +47,8 @@
       '80': {color: 'red'}
     }
     vm.empty = {};
+    vm.gaugeClicked = function() {
+      alert('clicked!');
+    }
   }
 }(angular));

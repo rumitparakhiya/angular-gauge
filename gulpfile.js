@@ -69,6 +69,7 @@
     gulp.task('js', () => {
         return gulp.src('src/angularjs-gauge.js')
             .pipe(gulp.dest('./dist/'))
+            .pipe(gulp.dest('./examples/'))
             .pipe(rename('angularjs-gauge.min.js'))
             .pipe(sourcemaps.init())
             .pipe(uglify({
