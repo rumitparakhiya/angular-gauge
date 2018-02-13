@@ -205,7 +205,7 @@
                     context.stroke();
                 }
 
-                this.context.lineWidth = this.getThickness()
+                this.context.lineWidth = this.getThickness();
                 context.beginPath();
                 context.strokeStyle = backgroundColor;
                 context.arc(center.x, center.y, radius - borderWidth, middle, tail, false);
